@@ -11,6 +11,7 @@ export function LoginView(props) {
   };
 
   return (
+<<<<<<< Updated upstream
     <form>
       <label>
         Username:
@@ -22,5 +23,20 @@ export function LoginView(props) {
       </label>
       <button type='submit' onClick={handleSubmit}>Submit</button>
     </form>
+=======
+    <Form>
+      <Form.Group controlId="formUsername">
+        <Form.Label>Username:</Form.Label>
+        <Form.Control type="text" onChange={e => setUsername(e.target.value)} required />
+      </Form.Group>
+
+      <Form.Group controlId="formPassword">
+        <Form.Label>Password:</Form.Label>
+        <Form.Control type="password" onChange={e => setPassword(e.target.value)} required />
+      </Form.Group>
+      <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+      <Button variant="secondary" type="submit">Register</Button>
+    </Form>
+>>>>>>> Stashed changes
   );
 }
