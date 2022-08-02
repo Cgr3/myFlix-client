@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 import './login-view.scss';
 
 export function LoginView(props) {
@@ -9,10 +10,21 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
-    props.onLoggedIn(username);
+    axios.post('https://my1movieapi.herokuapp.com/users', {
+      Username: username,
+      Password: password
+    })
+      .then(response => {
+        const data = response.data;
+        console.log(data);
+        //Opens window in current tab
+        window.open('/', '_self');
+      })
+      .catch(e => {
+        console.log('Error loging in');
+        alert('Something wasn\'t right');
+      });
   };
-
   return (
     <Form>
       <Form.Group controlId="formUsername">
