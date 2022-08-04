@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/button';
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
