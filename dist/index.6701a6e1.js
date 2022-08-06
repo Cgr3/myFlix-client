@@ -25349,8 +25349,8 @@ class MainView extends _reactDefault.default.Component {
                             lineNumber: 65
                         },
                         __self: this
-                    }, movie._id)
-                })
+                    })
+                }, movie._id)
             )
         }));
     }
@@ -30534,7 +30534,7 @@ class MovieCard extends _reactDefault.default.Component {
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
                     variant: "top",
-                    src: "movie.ImageURL",
+                    src: "movie.ImagePath",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
                         lineNumber: 15
@@ -30585,7 +30585,7 @@ MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
-        ImageURL: _propTypesDefault.default.string.isRequired,
+        ImagePath: _propTypesDefault.default.string.isRequired,
         Genre: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string.isRequired,
             Description: _propTypesDefault.default.string.isRequired
@@ -30605,7 +30605,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","@parcel/transformer-js/src/esmodule-helpers.js":"cmMu5","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4P2V5","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","axios":"iYoWk"}],"cF5gT":[function() {},{}],"MoOk8":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","axios":"iYoWk","./movie-card.scss":"cF5gT","@parcel/transformer-js/src/esmodule-helpers.js":"cmMu5","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4P2V5"}],"MoOk8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -30740,7 +30740,7 @@ const context = /*#__PURE__*/ _react.createContext(null);
 context.displayName = 'CardHeaderContext';
 exports.default = context;
 
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"cmMu5"}],"ikZdr":[function(require,module,exports) {
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"cmMu5"}],"cF5gT":[function() {},{}],"ikZdr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -30776,7 +30776,7 @@ class MovieView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                        src: movie.ImageURL,
+                        src: movie.ImagePath,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 13
@@ -30917,6 +30917,6 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./movie-view.scss":"kvL93","@parcel/transformer-js/src/esmodule-helpers.js":"cmMu5","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4P2V5","react-bootstrap/button":"9CzHT"}],"kvL93":[function() {},{}],"jUTZ8":[function() {},{}]},["cCjF2","d2biv","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/button":"9CzHT","./movie-view.scss":"kvL93","@parcel/transformer-js/src/esmodule-helpers.js":"cmMu5","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4P2V5"}],"kvL93":[function() {},{}],"jUTZ8":[function() {},{}]},["cCjF2","d2biv","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.6701a6e1.js.map
