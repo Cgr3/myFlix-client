@@ -30502,7 +30502,7 @@ class MovieCard extends _reactDefault.default.Component {
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
                     variant: "top",
-                    src: "movie.ImagePath",
+                    src: "movie.Imagepath",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
                         lineNumber: 15
@@ -30553,7 +30553,7 @@ MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
-        ImagePath: _propTypesDefault.default.string.isRequired,
+        Imagepath: _propTypesDefault.default.string.isRequired,
         Genre: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string.isRequired,
             Description: _propTypesDefault.default.string.isRequired
@@ -30744,7 +30744,7 @@ class MovieView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                        src: movie.ImagePath,
+                        src: movie.Imagepath,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 13
