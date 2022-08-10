@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
 
 import './registration-view.scss';
 
@@ -14,28 +13,56 @@ export function RegistrationView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
   };
 
-  return (
-    <Form>
-      <Form.Group controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
-        <Form.Control type="text" onChange={e => setUsername(e.target.value)} required />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Password:</Form.Label>
-        <Form.Control type="password" onChange={e => setPassword(e.target.value)} required />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Email:</Form.Label>
-        <Form.Control type="email" onChange={e => setPassword(e.target.value)} required />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Birthday:</Form.Label>
-        <Form.Control type="date" onChange={e => setPassword(e.target.value)} required />
-      </Form.Group>
-      <Button variant="secondary" type="submit" onClick={handleSubmit}>Register</Button>
-    </Form>
-  )
+  axios.post('https://my1movieapi.herokuapp.com/users', {
+    Username: username,
+    Password: password,
+    Email: email
+  })
+    .then(response => {
+      const data = response.data;
+      console.log(data);
+      //Opens window in current tab
+      window.open('/', '_self');
+    })
+    .catch(e => {
+      console.log('Error registering user');
+      alert('Something wasn\'t right');
+    });
+};
 
-}
+return (
+  <Container>
+    <Row>
+      <Col>
+        <CardGroup>
+          <Card>
+            <Card.Body>
+              <Card.Title>Registration Page</Card.Title>
+              <Form>
+                <h2>Registration page!</h2>
+                <Form.Group controlId="formUsername">
+                  <Form.Label>Username:</Form.Label>
+                  <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} required placeholder='Enter a username' />
+                </Form.Group>
+
+                <Form.Group>
+                  <Form.Label>Password:</Form.Label>
+                  <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} required minLength='8' placeholder='Password requires 8 or more characters' />
+                </Form.Group>
+
+                <Form.Group>
+                  <Form.Label>Email:</Form.Label>
+                  <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder='Enter your email' />
+                </Form.Group>
+                <Button variant="primary" type="submit" onClick={handleSubmit}>Register</Button>
+              </Form>
+            </Card.Body>
+          </Card>
+        </CardGroup>
+      </Col>
+    </Row>
+  </Container>
+)
