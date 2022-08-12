@@ -57,6 +57,10 @@ return (
                   <Form.Label>Email:</Form.Label>
                   <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder='Enter your email' />
                 </Form.Group>
+                <Form.Group>
+                  <Form.Label>Birthday:</Form.Label>
+                  <Form.Control type="birthday" value={birthday} onChange={e => setBirthday(e.target.value)} required placeholder='Enter your birthday' />
+                </Form.Group>
                 <Button variant="primary" type="submit" onClick={handleSubmit}>Register</Button>
               </Form>
             </Card.Body>
