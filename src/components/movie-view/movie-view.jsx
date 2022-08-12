@@ -1,5 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/button';
+import PropTypes from 'prop-types';
+
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
@@ -35,7 +37,7 @@ export class MovieView extends React.Component {
   }
 }
 
-MovieCard.propTypes = {
+MovieView.propTypes = {
   movie: PropTypes.shape({
     Title: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
