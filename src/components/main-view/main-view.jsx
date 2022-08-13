@@ -81,6 +81,7 @@ export class MainView extends React.Component {
 
     return (
       <Row className="main-view justify-content-md-center">
+        <button onClick={() => { this.onLoggedOut() }}>Logout</button>
         {selectedMovie
           ? (
             <Col md={8}>
