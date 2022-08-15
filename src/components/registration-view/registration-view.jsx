@@ -28,7 +28,7 @@ export function RegistrationView(props) {
     } if (!username) {
       setValues({ ...values, usernameErr: 'Username required' });
       isReq = false;
-    } else if {
+    } else if (username.length < 5) {
       setValues({ ...values, usernameErr: 'Username must be 5 characters long' })
       isReq = false;
     } if (!password) {
@@ -121,13 +121,14 @@ export function RegistrationView(props) {
       </Row>
     </Container>
   );
+}
 
-
-  RegistrationView.propTypes = {
-    register: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Username: PropTypes.string.isRequired,
-      Password: PropTypes.string.isRequired,
-      Email: PropTypes.string.isRequired,
-    }),
-  };
+RegistrationView.propTypes = {
+  register: PropTypes.shape({
+    Name: PropTypes.string.isRequired,
+    Username: PropTypes.string.isRequired,
+    Password: PropTypes.string.isRequired,
+    Email: PropTypes.string.isRequired,
+    Birthday: PropTypes.string.isRequired,
+  }),
+};
