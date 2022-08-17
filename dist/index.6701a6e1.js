@@ -28823,7 +28823,7 @@ function LoginView(props) {
     const [password, setPassword] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
-        _axiosDefault.default.post('https://my1movieapi.herokuapp.com/users', {
+        _axiosDefault.default.post('https://my1movieapi.herokuapp.com/login', {
             Username: username,
             Password: password
         }).then((response)=>{
