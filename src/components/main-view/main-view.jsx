@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import { Row, Col } from 'react-bootstrap/';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
