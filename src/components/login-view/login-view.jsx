@@ -2,29 +2,57 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import PropTypes from 'prop-types';
+
 import './login-view.scss';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  //Declare hook for inputs
+  const [usernameErr, setUsernameErr] = useState('');
+  const [passwordErr, setPasswordErr] = useState('');
+
+  const validate = () => {
+    let isReq = true;
+    if (!username) {
+      setUsernameErr('Username is required');
+      isReq = false;
+    } else if (username.length < 5) {
+      setUsernameErr('Username must be at least 5 characters');
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr('Password required');
+      isReq = false;
+    } else if (password.length < 6) {
+      setPasswordErr('Password must be at least 6 characters long');
+      isReq = false;
+    }
+    return isReq;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://my1movieapi.herokuapp.com/users', {
-      Username: username,
-      Password: password
-    })
-      .then(response => {
-        const data = response.data;
-        console.log(data);
-        //Opens window in current tab
-        window.open('/', '_self');
-      })
-      .catch(e => {
-        console.log('Error loging in');
-        alert('Something wasn\'t right');
-      });
+    const isReq = validate();
+    if (isReq) {
+      // Send a request to the server for authentication
+      axios
+        .post('https://my1movieapi.herokuapp.com/login', {
+          username: username,
+          password: password,
+        })
+        .then((response) => {
+          const data = response.data;
+          props.onLoggedIn(data);
+        })
+        .catch((e) => {
+          console.log('No such user');
+        });
+    }
   };
+
   return (
     <Form>
       <Form.Group controlId="formUsername">
@@ -41,3 +69,11 @@ export function LoginView(props) {
     </Form >
   );
 }
+
+LoginView.propTypes = {
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+  }),
+  onLoggedIn: PropTypes.func.isRequired,
+};
