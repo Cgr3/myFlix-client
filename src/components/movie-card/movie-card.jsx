@@ -14,11 +14,11 @@ export class MovieCard extends React.Component {
 
     return (
       <Card border='primary' style={{ width: '18rem' }} className='mb-3'>
-        <Card.Img variant='top' src={'movie.Imagepath'} crossOrigin='true' />
+        <Card.Img variant='top' src={movie.Imagepath} crossOrigin='true' />
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
           <Card.Text>{movie.Description}</Card.Text>
-          <Link to={`/movies/${movies._id}`}>
+          <Link to={`/movies/${movie._id}`}>
             <Button variant='link'>Open</Button>
           </Link>
         </Card.Body>
