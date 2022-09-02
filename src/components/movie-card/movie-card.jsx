@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 
 import { Link } from 'react-router-dom';
@@ -13,16 +14,18 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card border='primary' style={{ width: '18rem' }} className='mb-3'>
-        <Card.Img variant='top' src={movie.Imagepath} />
-        <Card.Body>
-          <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text>{movie.Description}</Card.Text>
-          <Link to={`/movies/${movie._id}`}>
-            <Button variant='link'>Open</Button>
-          </Link>
-        </Card.Body>
-      </Card>
+      <Container className='movieCard'>
+        <Card border='primary' style={{ width: '18rem' }} className='mblr-3' crossOrinin='true'>
+          <Card.Img variant='top' src={movie.Imagepath} />
+          <Card.Body>
+            <Card.Title>{movie.Title}</Card.Title>
+            <Card.Text>{movie.Description}</Card.Text>
+            <Link to={`/movies/${movie._id}`}>
+              <Button variant='link'>Open</Button>
+            </Link>
+          </Card.Body>
+        </Card>
+      </Container>
     );
   }
 }
