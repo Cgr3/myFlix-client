@@ -14,7 +14,7 @@ export class MovieView extends React.Component {
         <Row>
           <Col>
             <div className="movie-poster">
-              <img src={movie.Imagepath} />
+              <img src={movie.Imagepath} crossOrigin='true' />
             </div>
           </Col>
         </Row>
