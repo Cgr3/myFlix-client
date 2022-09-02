@@ -13,7 +13,7 @@ export class MovieCard extends React.Component {
 
     return (
       <Container className='movieCard'>
-        <Card border='primary' style={{ width: '18rem' }} className='mblr-3' crossOrinin='true'>
+        <Card border='primary' style={{ width: '18rem' }} className='mb-3' crossOrinin='true'>
           <Col>
             <Row>
               <Card.Img variant='top' src={movie.Imagepath} crossOrigin='true' />
@@ -48,5 +48,4 @@ MovieCard.propTypes = {
       Death: PropTypes.string
     }),
   }).isRequired,
-  onMovieClick: PropTypes.func.isRequired
 };
