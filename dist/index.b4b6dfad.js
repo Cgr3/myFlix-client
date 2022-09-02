@@ -33732,7 +33732,7 @@ class MovieView extends (0, _reactDefault.default).Component {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Link, {
-                                        to: `/directors/${Movie.Director.Name}`,
+                                        to: `/directors/${movie.Director.Name}`,
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _.Button), {
                                             variant: "link",
                                             children: "Director"
