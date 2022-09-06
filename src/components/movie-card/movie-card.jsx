@@ -12,10 +12,10 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Container className='movieCard'>
-        <Card border='primary' style={{ width: '18rem' }} className='mb-3' crossOrinin='true'>
-          <Col>
-            <Row>
+      <Card border='primary' style={{ width: '18rem' }} className='mb-3' crossOrinin='true'>
+        <Col>
+          <Row>
+            <Container className='movieCard'>
               <Card.Img variant='top' src={movie.Imagepath} crossOrigin='true' />
               <Card.Body>
                 <Card.Title>{movie.Title}</Card.Title>
@@ -24,10 +24,10 @@ export class MovieCard extends React.Component {
                   <Button variant='link'>Open</Button>
                 </Link>
               </Card.Body>
-            </Row>
-          </Col>
-        </Card>
-      </Container >
+            </Container >
+          </Row>
+        </Col>
+      </Card>
     );
   }
 }
