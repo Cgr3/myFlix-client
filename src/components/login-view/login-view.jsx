@@ -40,7 +40,7 @@ export function LoginView(props) {
       // Send a request to the server for authentication
       axios
         .post('https://my1movieapi.herokuapp.com/login', {
-          username: username,
+          username: Username,
           password: password,
         })
         .then((response) => {
